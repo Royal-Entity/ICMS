@@ -7,7 +7,6 @@ require('dotenv').config()
 const app = express();
 const port = process.env.NODE_PORT;
 
-
 // Example user database
 const users = [
   { username: 'admin', password: '1234', id: 1 },
