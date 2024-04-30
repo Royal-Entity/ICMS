@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>Login | Industrial CMS</title>
+        <!--<link rel="stylesheet" href="/bootstrap.min.css">-->
+    </head>
+<body bgcolor="#E6E7E8" leftmargin="80" rightmargin="50" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+<br><script>
+function alerthide(){
+	/*var w = window.open('','','display=center,width=300,height=200')
+	w.document.write("Check your login credentials<br>")
+	w.focus()
+	setTimeout(function() {w.close();}, 2000)*/	
+	let myWindow = window.myPopup ? (window.myPopup.closed ? null : window.myPopup) : null;
+    if (!myWindow) {
+        myWindow = window.open("", "MsgWindow", "width=350,height=200");
+        window.myPopup = myWindow; // Store reference for future use
+    }
+    // Write the message to the window
+    myWindow.document.write("<p>Invalid login</p>");
+    // Close the window after 2 seconds
+    setTimeout(function() {
+        myWindow.close();
+    }, 1000);
+}
+//   document.getElementById('loginForm').addEventListener('submit', async (event) => {
+//     event.preventDefault();
+    
+//     const username = document.getElementById('username').value;
+//     const password = document.getElementById('password').value;
+    
+//     const response = await fetch('/login', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify({ username, password })
+//     });
+    
+//     const data = await response.json();
+    
+//     if (data.success) {
+//       // Redirect or perform any other action for successful login
+//       console.log('Login successful!');
+//     } else {
+//       // Display error message for failed login
+//       console.error('Login failed:', data.message);
+//     }
+//   });
+
+// }
+</script>
+<div style="background-color: white;width: max-content;width:1100px;">
+	<div style="vertical-align: middle;">
+		<div style="height: 32%;">
+			
+			<div>
+				<div style="height:10px;background-color: white;">
+				</div>
+
+				<div style="margin-left: 60px;margin-top: 60px;font-size: 35px; font-weight:600;">Integrated Cyber Manufacturing Systems
+					<img src="Icons/Icon(RGB)  Page 3.png" alt="Computer Systems" style="margin-left: 800px;margin-top: -100px;height: 160px;">
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+<br><br><br>
+    <table cellspacing=30><tr>
+    <td valign="top"  align="justify">
+    <p style="font-size: 25px;">
+    Integrated Cyber Manufacturing System is an initiation to connect multiple manufacturing systems on unified dashboard that further demonstrates applications of various disruptive technologies in the domain of manufacturing.
+	</p></td>
+    <td align="center"><form class="" id="loginForm" action="/login" method="POST" style="padding-left: 200px; padding-right: 80px;">
+		<div class="row my-5 align-items-center" style="height: 250px;">
+			<!--<div class="d-none d-sm-block col-sm-6 col-md-6 col-lg-6" style="padding-right: 60px; padding-left: 60px;">
+				<p style="font-size: 24px; text-align: justify; text-justify: inter-word; margin-top: -25px;">Udhyog 4.0 (U4) is a start-up initiation by professionals in 2019, and mainly provides technological
+					solutions related to emerging technologies such as Industry 4.0. This in turn transform existing
+					industrial setup into SMART and sustainable manufacturing setup.</p>
+			</div>-->
+			<div class="col-sm-6 offset-md-1 col-md-4 offset-lg-1 col-lg-4 p-5">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<!--<span class="input-group-text" style="border-radius: 15px 0px 0px 15px; border-left: 2px solid black; border-top: 2px solid black; border-bottom: 2px solid black;">
+							<i class="material-icons" style="color: #64D47A;font-size: 5px;"></i>
+						</span>-->
+					</div>
+                    <br>
+					<input class="form-control" id="username" name="username" type="text" style="background-color: rgb(233,236,239);block-size: 37px; width:270px; font-family: Lato, sans-serif; box-shadow: none; border-radius: 15px; border: 2px solid black" placeholder="   Username">
+                </div>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<!--<span class="input-group-text" style="border-radius: 15px 0px 0px 15px; border-left: 2px solid black; border-top: 2px solid black; border-bottom: 2px solid black;">
+							<i class="material-icons" style="color: #64D47A;font-size: 5px;"></i>
+						</span>-->
+					</div>
+                    <br>
+					<input class="form-control" id="password" name="password" type="password" style="background-color: rgb(233,236,239);block-size: 37px; width:270px; font-family: Lato, sans-serif; box-shadow: none;border-radius: 15px; border: 2px solid black;" placeholder="   Password">
+                    
+                </div>
+				<div class="form-group">
+				<br><button class="btn btn-primary" id="button" style="color: white;background-color: #64D47A;block-size: 40px; width:270px;box-shadow: none; border-radius: 15px; border: 2px solid black;" type="submit">
+				<b>Sign In</b></button>
+				</div>
+				<div class="form-group">
+                    <br>
+					<a href="forgot.php" style="color: black;text-decoration: none;">Forgot Password</a>
+				</div>
+			</div>
+		</div>
+	</form></td></tr>
+</table>
+<div class="text-center pb-2" style="background-color: #E6E7E8;">
+    <center><div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">© Copyright 2020</div>
+    <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Udhyog 4.0 LLP</div></center>
+</div>
+</body>
+</html>

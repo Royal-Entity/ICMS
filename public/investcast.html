@@ -1,0 +1,352 @@
+<html>
+<head><title>IC | Wax Injection</title>
+    <link rel="stylesheet" href="ic.css">
+</head>
+
+<body bgcolor="#E6E7E8" link="white" alink="cyan" vlink="white" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+
+<div class="orange"><div>&nbsp;</div>
+    <div style="color: #ffffff;margin-left: 15px;margin-top: -10px;font-size: inherit;font-weight: 660;">
+    Integrated Cyber Manufacturing Systems - India</div>
+    <div style="margin-left: 1120px;margin-top: -27px;width: 22px;height:22px; border-radius: 50px; border: 5px solid white; padding: 5px; font-weight: 800; font-size: 18px;color:white;">UL</div>
+    <div align="right" style="margin-right: 2%;margin-top: -47px;"><a href="logout.html"><img src="Icons/Logouticon.png" style="height: 60px;width: 60px;"></a></div>
+</div>
+
+<div class="green"><hr size="4" color="#5DC072">
+<span id="dshbrd">
+    <a href="dashboard.html" style="text-decoration: none;">Dashboard</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <a href="investcast.html" style="text-decoration: none;">Wax Injection</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <a href="meltpour.html" style="text-decoration: none;">Melting & Pouring</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <a href="shellpre.html" style="text-decoration: none;">Shell Preheating</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <a href="shellmade.html" style="text-decoration: none;">Shell Making & Dewaxing</a></span>
+    <a href="process.html">
+        <img id="boxes" style="background-color: white;display: inline;" align="right" src="Icons/PM2.png"/></a>
+</div>
+
+<div class="container1">
+    <div id="temp" align="center">
+        <!-- Embedded Gauge Chart -->
+        <div id="container" style="border-radius: 15px;margin: 0 auto"></div>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+        <script>
+            Highcharts.chart('container', {
+
+chart: {
+    type: 'solidgauge',
+    height: '100%',
+    events: {
+        load: function () {
+            const chart = this;
+            const initialTemp = 65; // Default initial temperature
+            const initialHumid = 50; // Default initial humidity
+            const tempPoint = chart.series[0].points[0];
+            const humidPoint = chart.series[1].points[0];
+            tempPoint.update(initialTemp);
+            humidPoint.update(initialHumid);
+            // Set initial label with default values
+            chart.lbl = chart.renderer.label(initialTemp + '°C & ' + initialHumid + '%', 160, 230)
+                .css({
+                    fontSize: '17px',
+                    fontWeight: 'bold'
+                })
+                .add();
+            setInterval(function () {
+                const newTemp = Math.round(20 + 80 * Math.random());   // simulate temperature
+                const newHumid = Math.round(20 + 80 * Math.random()); // simulate humidity
+                tempPoint.update(newTemp);
+                humidPoint.update(newHumid);
+                chart.lbl.attr({
+                    text: newTemp + '°C & ' + newHumid + '%'
+                });
+            }, 4000); // update every 4 seconds
+        }
+    }
+},
+
+title: {
+    text: 'Temperature and Humidity Gauge',
+    align: 'center',
+    verticalAlign: 'top',
+    y: 20
+},
+
+tooltip: {
+    enabled: false
+},
+
+pane: {
+    startAngle: -90,
+    endAngle: 90,
+    background: [{ // Track for Temperature
+        outerRadius: '112%',
+        innerRadius: '88%',
+        backgroundColor: Highcharts.color('#FAA954').setOpacity(0.3).get(),
+        borderWidth: 0,
+        shape:'arc'
+    }, { // Track for Humidity
+        outerRadius: '87%',
+        innerRadius: '63%',
+        backgroundColor: Highcharts.color('#5DC072').setOpacity(0.3).get(),
+        borderWidth: 0,
+        shape:'arc'
+    }]
+},
+
+yAxis: {
+    min: 0,
+    max: 100,
+    lineWidth: 0,
+    tickPositions: [0, 20, 40, 60, 80, 100],
+    labels: {
+        style: {
+            fontSize: '16px'
+        },
+        y: 15
+    }
+},
+
+plotOptions: {
+    solidgauge: {
+        dataLabels: {
+            enabled: false
+        }
+    }
+},
+
+series: [{
+    name: 'Temperature',
+    data: [{
+        color: '#FAA954', // Custom color for Temperature
+        radius: '112%',
+        innerRadius: '88%',
+        y: 65 // initial temperature, can set to 0 for consistency
+    }]
+}, {
+    name: 'Humidity',
+    data: [{
+        color: '#5DC072', // Custom color for Humidity
+        radius: '87%',
+        innerRadius: '63%',
+        y: 50 // initial humidity, can set to 0 for consistency
+    }]
+}]
+});
+        </script>
+        <!-- End of Embedded Gauge Chart -->
+    </div>
+    <div id="airq" align="center">
+        <script>
+            Highcharts.chart('airq', {
+                chart: {
+                    type: 'solidgauge',
+                    events: {
+                        load: function() {
+                            const chart = this;
+                            setInterval(function() {
+                                // Generate a random air quality index value between 0 and 500
+                                var newAQI = Math.round(Math.random() * 500);
+                                chart.series[0].points[0].update(newAQI);
+                            }, 4000);
+                        }
+                    }
+                },
+    
+                title: {
+                    text: 'Air Quality Index',
+                    style: {
+                        fontSize: '20px'
+                    }
+                },
+    
+                tooltip: {
+                    enabled: false
+                },
+    
+                pane: {
+                    center: ['50%', '50%'],
+                    size: '100%',
+                    startAngle: -90,
+                    endAngle: 90,
+                    background: {
+                        backgroundColor: Highcharts.color('#FF8C00').setOpacity(0.3).get(),
+                        innerRadius: '60%',
+                        outerRadius: '100%',
+                        shape: 'arc'
+                    }
+                },
+    
+                yAxis: {
+                    stops: [
+                        [0.1, '#5DC072'], // green
+                        [1, '#FAA954'] // orange
+                    ],
+                    lineWidth: 0,
+                    tickWidth: 0,
+                    minorTickInterval: null,
+                    tickAmount: 2,
+                    labels: {
+                        y: 16
+                    },
+                    min: 0,
+                    max: 500,
+                    title: {
+                        text: 'AQI',
+                        y: -70
+                    }
+                },
+    
+                plotOptions: {
+                    solidgauge: {
+                        dataLabels: {
+                            y: 5,
+                            borderWidth: 0,
+                            useHTML: true
+                        }
+                    }
+                },
+    
+                credits: {
+                    enabled: false
+                },
+    
+                series: [{
+                    name: 'Air Quality',
+                    data: [120],
+                    dataLabels: {
+                        format: '<div style="text-align:center"><span style="font-size:22px;color:black">{y}</span><br/><span style="font-size:12px;color:silver">AQI</span></div>'
+                    },
+                    tooltip: {
+                        valueSuffix: ' AQI'
+                    }
+                }]
+            });
+        </script>
+    </div>
+    <div id="CO2" align="center">
+        <script>
+            Highcharts.chart('CO2', {
+                chart: {
+                    type: 'solidgauge',
+                    events: {
+                        load: function() {
+                            const chart = this;
+                            setInterval(function() {
+                                // Generate a random CO2 level between 0 and 2000 ppm
+                                var newCO2Level = Math.round(Math.random() * 2000);
+                                chart.series[0].points[0].update(newCO2Level);
+                            }, 4000);
+                        }
+                    }
+                },
+    
+                title: {
+                    text: 'CO2 Levels',
+                    style: {
+                        fontSize: '20px'
+                    }
+                },
+    
+                tooltip: {
+                    enabled: false
+                },
+    
+                pane: {
+                    center: ['50%', '50%'],
+                    size: '100%',
+                    startAngle: -90,
+                    endAngle: 90,
+                    background: {
+                        backgroundColor: Highcharts.color('#FF8C00').setOpacity(0.3).get(),
+                        innerRadius: '60%',
+                        outerRadius: '100%',
+                        shape: 'arc'
+                    }
+                },
+    
+                yAxis: {
+                    stops: [
+                        [0.1, '#5DC072'], // green
+                        [1, '#FF8C00'] // orange
+                    ],
+                    lineWidth: 0,
+                    tickWidth: 0,
+                    minorTickInterval: null,
+                    tickAmount: 2,
+                    labels: {
+                        y: 16
+                    },
+                    min: 0,
+                    max: 2000,
+                    title: {
+                        text: 'ppm',
+                        y: -70
+                    }
+                },
+    
+                plotOptions: {
+                    solidgauge: {
+                        dataLabels: {
+                            y: 5,
+                            borderWidth: 0,
+                            useHTML: true
+                        }
+                    }
+                },
+    
+                credits: {
+                    enabled: false
+                },
+    
+                series: [{
+                    name: 'CO2 Level',
+                    data: [400],
+                    dataLabels: {
+                        format: '<div style="text-align:center"><span style="font-size:22px;color:black">{y}</span><br/><span style="font-size:12px;color:silver">ppm</span></div>'
+                    },
+                    tooltip: {
+                        valueSuffix: ' ppm'
+                    }
+                }]
+            });
+        </script></div>
+    </div>
+</div>
+
+<div class="container2">
+    <div id="machine" align="center">
+        <div id="t4">Machine</div>
+        <div><img src="Icons/WIP.png" id="wax" /></div>
+    </div>
+    <div id="specify" align="center">
+        <div id="t5">Specifications</div>
+        <div>
+        <table class="table" cellspacing="12" cellpadding="15px">
+            <tr><th colspan="2">Wax Injection</th></tr>
+            <tr><td align="left">Status</td>
+                <td align="right"><div class="off">&nbsp;&nbsp;&nbsp;Off&nbsp;&nbsp;&nbsp;</div></td></tr>
+            <tr><td align="left">PRC</td>
+                <td align="right">AC0490</td></tr>
+            <tr><td align="left">Die No.</td>
+                <td align="right">05035</td></tr>
+            <tr><td align="left">Part</td>
+                <td align="right">-</td></tr>
+            <tr><td align="left">PRC Quantity</td><td align="right">44</td></tr>
+            <tr><td align="left">Operator</td><td align="right">Mr Sagar Seju</td></tr>
+        </table>
+        </div>
+    </div>
+</div>
+<center>
+    <div class="text-center pb-2" style="background-color: #E6E7E8;">
+        <div>© Copyright 2020</div>
+        <div>Udhyog 4.0 LLP</div>
+    </div>
+</center>
+</body>
+</html>

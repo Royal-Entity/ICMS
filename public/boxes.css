@@ -1,0 +1,52 @@
+.white {
+    background-color: white;height: 26%; width: auto;
+    margin-top: 2%;
+    display: flex;
+}
+.title {
+    margin-left: 8%;margin-top: 5%;width: 60%;
+    font-size:x-large; font-weight:bold;
+}
+.image {
+    margin-left:10%;
+}
+.compsys {
+    margin: 10px;
+    height: 90%;
+    width: 100%;
+}
+.green {
+    background-color: rgb(21, 179, 86);
+    margin-top: 2%;margin-bottom: 2%;
+    display: flex;
+}
+.gtext {
+    color: white;margin-left: 12px;margin-top:18px;
+    font-weight:bolder;width: 100%;
+}
+.ul {
+    margin-top: 8px; width: 20px;height:20px;color: white;
+    border-radius: 50px; border: 5px solid white;
+    padding: 5px; font-weight: 800; font-size: 16px;
+}
+.gimg {
+    height: auto;
+    width: 8%;
+    margin-left: 2%;
+}
+.lo {
+    margin: 1%;
+    margin-top: 4px;
+    height:inherit;
+    width: 100%;
+}
+.table{
+    background-color: #FAA954; height:auto; width: 100%;
+}
+.img{
+    height:80px;
+}
+.footer{
+    background-color: #E6E7E8;
+    margin-top: 1%;
+}

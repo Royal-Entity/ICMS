@@ -1,0 +1,140 @@
+.orange {
+    background-color: #FAA954;
+    width: auto;
+    height: 52px;
+    margin-top: -8px;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.green {
+    background-color: #5DC072;
+    width: auto;
+    height: 52px;
+    margin-top: 8px;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+#dshbrd{
+    margin-left: 15px;margin-right: 20px;font-size: inherit;font-weight: 500;width:fit-content;
+}
+#boxes{
+    height:80%;
+    width:4%;
+    margin-right: 2%;
+    margin-top: -0.5%;
+}
+
+.container1 {
+    border-radius: 15px;
+    height: auto;
+    margin-top: 8px;
+    display: flex;
+}
+#temp {
+    background-color: white;
+    width: 33%;
+    height:auto;
+    margin: 4px;
+    margin-right: 10px;
+    border-radius: 15px;
+    float:left;
+}
+#t1{
+    font-size: inherit;
+    font-weight: 500;
+}
+#i1{
+    height:inherit;
+    width:96%;
+}
+#airq {
+    background-color: white;
+    width: 34%;
+    height:auto;
+    margin: 4px;
+    margin-right: 10px;
+    border-radius: 15px;
+    float: left;
+}
+#t2{
+    font-size: inherit;
+    font-weight: 500;
+}
+#i2{
+    height:inherit;
+    width:100%;
+}
+#CO2 {
+    background-color: white;
+    width: 33%;
+    height:auto;
+    margin: 4px;
+    border-radius: 15px;
+    float: left;
+}
+#t3{
+    font-size: inherit;
+    font-weight: 500;
+}
+#i3{
+    height:inherit;
+    width:100%;
+}
+
+.container2 {
+    border-radius: 15px;
+    height:90%;
+    margin-top: 8px;
+    display:flex;
+}
+#machine {
+    background-color:white;
+    width: 65%;
+    height:auto;
+    margin: 4px;
+    margin-right: 8px;
+    border-radius: 15px;
+}
+#t4{
+    font-size: inherit;
+    font-weight: 500;
+}
+#i4{
+    height:96%;
+    width:98%;
+    border-radius: 20px;
+}
+#wax{
+    height:96%;
+    width:100%;
+    border-radius: 20px;
+}
+#specify {
+    background-color: white;
+    width: 35%;
+    height:auto;
+    margin: 4px;
+    border-radius: 15px;
+}
+#t5{
+    font-size: inherit;
+    font-weight: 500;
+}
+.table {
+    height:96%;
+    width:96%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.on {
+    background-color: green;
+    color:white;width:fit-content;
+    border-radius: 20px;
+    align-self:safe;
+}
+.off {
+    background-color: brown;
+    color:white;width:fit-content;
+    border-radius: 20px;
+    align-self:safe;
+}
